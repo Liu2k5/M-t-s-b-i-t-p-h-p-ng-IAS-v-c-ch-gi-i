@@ -8,3 +8,7 @@ Lưu lại đáp án những bài tập lập trình cho máy IAS thầy giao ch
 - Cho 1 số nguyên dương tại 0x100. Xác định số đó là Lẻ thì lưu vào 0x101, Chẵn thì lưu vào 0x102 :
 
   https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/0e89cc3ea4e13ccedfaed2fce03b89d22595f52f/chanhayle.txt
+
+- Cho 3 số nguyên bất kỳ lưu trên bộ nhớ từ địa chỉ 0x100. Sắp xếp các số đó theo thứ tự tăng dần từ địa chỉ 0x100 :
+
+  https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/cfa59407c4152ca1071e2421e3bc1e6b494d4454/sapxep3so.txt
