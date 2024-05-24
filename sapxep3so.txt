@@ -1,0 +1,37 @@
+LOAD M(0x100)               #tai gia tri cua so thu 1
+SUB M(0x101)                #tru cho gia tri so thu 2
+JUMP+ M(a)                  #so thu 1>=so thu 2 thi nhay den lenh a
+LOAD M(0x100)               #tai gia tri cua so thu 1               
+SUB M(0x102)                #tru cho gia tri so thu 3
+JUMP+ M(b)                  #so thu 1>=so thu 3 thi nhay den lenh b
+LOAD M(0x101)               #tai gia tri cua so thu 2
+SUB M(0x102)                #tru cho gia tri so thu 3
+JUMP+ M(c)                  #so thu 2>=so thu 3 thi nhay den lenh c
+JUMP M(0x300)
+
+.org 0x100
+.word 0x0000000005
+.word 0x0000000002
+.word 0x0000000000
+
+.org 0x200
+a:  LOAD MQ, M(0x100)       #luu tam gia tri so thu 1 vao MQ
+    LOAD M(0x101)           #tai gia tri cua so thu 2
+    STOR M(0x100)           #luu vao vi tri cua thu 1
+    LOAD MQ                 #chuyen gia tri tu MQ sang AC
+    STOR M(0x101)           #luu vao vi tri cua thu 2
+    JUMP M(0x001, 20:39)    #nhay den lenh o dong thu 4
+
+b:  LOAD MQ, M(0x100)
+    LOAD M(0x102)
+    STOR M(0x100)
+    LOAD MQ
+    STOR M(0x102)
+    JUMP M(0x003, 0:19)     #nhay den lenh o dong thu 7
+
+c:  LOAD MQ, M(0x101)
+    LOAD M(0x102)
+    STOR M(0x101)
+    LOAD MQ
+    STOR M(0x102)
+    JUMP M(0x300, 0:19)     #ket thuc chuong trinh
