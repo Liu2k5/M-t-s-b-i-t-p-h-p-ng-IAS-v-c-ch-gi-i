@@ -1,0 +1,26 @@
+LOAD M(so)              #tai gia tri so duoc cho
+SUB M(a)                #tru cho 2 de loai bo truong hop 0 va 1
+JUMP+ M(0x002)          #>=2 thi nhay den dong 5
+JUMP M(0x300)           #nguoc lai thi ket thuc chuong trinh
+LOAD M(so)
+DIV M(a)                #chia cho bien kiem tra (gia tri ban dau=2)
+SUB M(b)                #lay so du tru cho 1
+JUMP+ M(0x004, 20:39)   #neu ket qua>=0 nhay den dong 10
+JUMP M(0x200, 0:19)     #khong thi nhay den dong 21
+LOAD M(a)
+ADD M(b)                #tang gia tri a len 1
+STOR M(a)
+JUMP M(0x002)           #quay lai dong 5
+
+.org 0x020
+so: .word 0x1F          #day la so nguyen to
+a:  .word 0x2
+b:  .word 0x1
+
+.org 0x200
+LOAD M(a)
+SUB M(so)
+JUMP+ M(0x202, 0:19)    #neu a>so -> snt, nhay den dong 25
+JUMP M(0x300, 0:19)     #nguoc lai thi ket thuc chuong trinh
+LOAD M(so)
+STOR M(0x01F)
