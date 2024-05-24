@@ -1,0 +1,22 @@
+.org 0x000
+LOAD M(0x100)           #tai gia tri can kiem tra
+DIV M(0x110)            #thuc hien phep chia cho 2. Du luu vao AC
+SUB M(0x111)            #thuc hien tru so du cho 1
+JUMP+ M(b)              #neu ket qua=0, tuc so du=1, thuc hien lenh b
+JUMP M(a)               #neu ket qua=1, tuc so du=0, thuc hien lenh a
+
+.org 0x100
+.word 0x0000000009
+
+.org 0x110
+.word 0x0000000002
+.word 0x0000000001
+
+.org 0x200
+a:  LOAD M(0x100)
+    STOR M(0x102)       #luu vao 0x102
+    JUMP M(0x300)
+    
+b:  LOAD M(0x100)
+    STOR M(0x101)       #luu vao 0x101
+    JUMP M(0x300)
