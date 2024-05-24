@@ -1,0 +1,68 @@
+LOAD M(dem)
+SUB M(des)
+JUMP+ M(0x300)          #duyet du thi ket thuc
+LOAD M(0x020)           #CAN CAP NHAT O DAY
+SUB M(c)
+JUMP+ M(0x003, 20:39)   #den dong 8
+JUMP M(chuyen)          #0 va 1 khong phai snt
+SUB M(b)
+JUMP+ M(0x005, 0:19)    #den dong 11
+JUMP M(dung)            #2 la snt
+LOAD M(0x020)           #CAN CAP NHAT O DAY
+DIV M(a)                #kiem tra snt
+SUB M(b)
+JUMP+ M(0x007, 20:39)   #chia du den dong 16
+JUMP M(0x200, 0:19)     #chia het
+LOAD M(a)               #cap nhat a
+ADD M(b)
+STOR M(a)
+JUMP M(0x005, 0:19)     #den dong 11
+
+.org 0x020              #bat dau cua 20 o nho
+.word 0x003             # o
+.word 0x001             # x
+.word 0x009             # x
+.word 0x00B             # o
+.word 0x004             # x
+.word 0x005             # o
+.word 0x000             # x
+.word 0x00F             # x
+.word 0x007             # o
+.word 0x00B             # o
+.word 0x00C             # x
+.word 0x000             # x
+.word 0x007             # o
+.word 0x00E             # x
+.word 0x001             # x
+.word 0x00E             # x
+.word 0x006             # x
+.word 0x008             # x
+.word 0x010             # x
+.word 0x009             # x     6 snt
+a:  .word 0x2           #bien kiem tra snt
+b:  .word 0x1
+c:  .word 0x2
+dem:.word 0x0           #bien dem so luong o nho da kiem tra
+pos:.word 0x20          #vi tri o nho bat dau
+des:.word 0x14          #gioi han 20 o nho
+
+.org 0x200
+LOAD M(a)
+SUB M(0x020)            #CAN CAP NHAT O DAY. kiem tra a
+JUMP+ M(0x202, 0:19)    #neu a=so kiem tra thi +1 snt
+JUMP M(chuyen)          #neu a<so kiem tra thi chuyen
+dung:   LOAD M(0x01F)
+        ADD M(b)
+        STOR M(0x01F)
+chuyen: LOAD M(dem)
+        ADD M(b)
+        STOR M(dem)     #dem+=1
+        LOAD M(pos)
+        ADD M(b)
+        STOR M(pos)     #vi tri +=1
+        STA M(0x001, 20:39) #cap nhat cho dong 4
+        STA M(0x005)    #cap nhat cho dong 11
+        STA M(0x200, 20:39) #cap nhat cho dong 51
+        LOAD M(c)
+        STOR M(a)       #dat lai a=2
+        JUMP M(0x000)
