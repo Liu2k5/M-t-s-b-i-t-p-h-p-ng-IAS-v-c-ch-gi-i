@@ -1,0 +1,35 @@
+LOAD M(c)
+SUB M(a)
+SUB M(z)
+JUMP+ M(0x003)
+ADD M(z)
+JUMP+ M(0x200)
+LOAD M(c)
+SUB M(a)
+STOR M(temp)
+LOAD M(a)
+ADD M(b)
+STOR M(tmp2)
+LOAD MQ, M(tmp2)
+MUL M(c)
+LOAD MQ
+DIV M(temp)
+LOAD MQ
+STOR M(0x199)
+LOAD |M(0x199)|
+STOR M(0x199)
+
+
+.org 0x100
+a:  .word 0x3
+b:  .word 0x6
+c:  .word 0x7
+z:  .word 0x1
+t:  .word 0x0
+temp:.word 0x0
+tmp2:.word 0x0
+
+.org 0x200
+LOAD M(t)
+SUB M(z)
+STOR M(0x199)
