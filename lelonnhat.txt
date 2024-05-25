@@ -1,0 +1,85 @@
+LOAD M(lim)
+SUB M(dem)
+JUMP+ M(0x002)
+JUMP M(ketthuc)   	#ket thuc
+LOAD M(0x100)   	#cap nhat o day
+DIV M(c)
+SUB M(a)
+JUMP+ M(0x004, 20:39)
+JUMP M(next)    	#khi du=0
+LOAD M(0x100)   	#cap nhat o day
+SUB M(temp)
+JUMP+ M(capnhat)	#cap nhat temp
+JUMP M(next)
+
+.org 0x50
+dem:    .word 0x00
+lim:    .word 0x27
+pos:	.word 0x100
+a: 	 .word 0x1
+b:  	.word 0x30
+c:  	.word 0x2
+ehe:	.word 0x00
+temp:   .word 0x0
+
+.org 0x100
+a0: .word 0x0000000001
+a1: .word 0x0000000003
+a2: .word 0x0000000022
+a3: .word 0x0000000005
+a4: .word 0x0000100030
+a5: .word 0x0000000012
+a6: .word 0x0000005000
+a7: .word 0x0000000010
+a8: .word 0x0000000088
+a9: .word 0x0000000016
+a10: .word 0x0000000105
+a11: .word 0x0000100103
+a12: .word 0x0000000109
+a13: .word 0x0000001000
+a14: .word 0x0000005000
+a15: .word 0x0000000090
+a16: .word 0x0000000330
+a17: .word 0x0000002000
+a18: .word 0x0000000045
+a19: .word 0x0000000310
+a20: .word 0x0000001005
+a21: .word 0x0000110005
+a22: .word 0x0000060023
+a23: .word 0x0000000005
+a24: .word 0x0000000030
+a25: .word 0x0000000200
+a26: .word 0x0000005000
+a27: .word 0x0000000010
+a28: .word 0x0000000088
+a29: .word 0x0000000016
+a30: .word 0x0000000105
+a31: .word 0x0000001003
+a32: .word 0x0000000109
+a33: .word 0x0000000032
+a34: .word 0x0000000054
+a35: .word 0x0000000400
+a36: .word 0x0000000300
+a37: .word 0x0000005000
+a38: .word 0x0000000034
+a39: .word 0x0000000710
+
+.org 0x200
+capnhat:	LOAD M(0x100)   	#cap nhat o day
+        	STOR M(temp)
+next:   	LOAD M(dem)
+        	ADD M(a)
+        	STOR M(dem)
+        	LOAD M(pos)
+        	ADD M(a)
+        	STOR M(pos)
+        	STA M(0x002)
+        	STA M(0x004, 20:39)
+        	STA M(0x200)
+        	JUMP M(0x000)
+ketthuc:	LOAD M(b)
+        	ADD M(ehe)
+        	ADD M(a)
+        	STA M(0x208, 20:39)
+        	LOAD M(temp)
+        	STOR M(0x000)
