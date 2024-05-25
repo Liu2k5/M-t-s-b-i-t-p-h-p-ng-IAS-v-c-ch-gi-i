@@ -29,4 +29,102 @@ Kết quả D lưu vào word nhớ có địa chỉ 0x1XY (0.5đ)
 
   https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/cd060672bab8988b70ad2929fd19844fb1496a37/tinhtoan.txt
 
+- Cho mảng dữ liệu như dưới . Với XY là giá trị số thứ tự danh sách hãy thực hiện:
+
+  Tính tổng các phần tử trong mảng từ a[XY]  đến a39. (1.5đ)
+  
+  Kết quả lưu vào word nhớ M(0x030 + XY). (0.5đ)
+
+.org 0x100
+
+a0: .word 0x0000000001
+
+a1: .word 0x0000000003
+
+a2: .word 0x0000000022
+
+a3: .word 0x0000000005
+
+a4: .word 0x0000100030
+
+a5: .word 0x0000000012
+
+a6: .word 0x0000005000
+
+a7: .word 0x0000000010
+
+a8: .word 0x0000000088
+
+a9: .word 0x0000000016
+
+a10: .word 0x0000000105
+
+a11: .word 0x0000100103
+
+a12: .word 0x0000000109
+
+a13: .word 0x0000001000
+
+a14: .word 0x0000005000
+
+a15: .word 0x0000000090
+
+a16: .word 0x0000000330
+
+a17: .word 0x0000002000
+
+a18: .word 0x0000000045
+
+a19: .word 0x0000000310
+
+a20: .word 0x0000001005
+
+a21: .word 0x0000010002
+
+a22: .word 0x0000000022
+
+a23: .word 0x0000000005
+
+a24: .word 0x0000000030
+
+a25: .word 0x0000000200
+
+a26: .word 0x0000005000
+
+a27: .word 0x0000000010
+
+a28: .word 0x0000000088
+
+a29: .word 0x0000000016
+
+a30: .word 0x0000000105
+
+a31: .word 0x0000001003
+
+a32: .word 0x0000000109
+
+a33: .word 0x0000000032
+
+a34: .word 0x0000000054
+
+a35: .word 0x0000000400
+
+a36: .word 0x0000000300
+
+a37: .word 0x0000005000
+
+a38: .word 0x0000000034
+
+a39: .word 0x0000000710
+
+  https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/185acc647c625513ef510f7153d28f30ac0834af/tinhtong.txt
+
+- Cho mảng dữ liệu như Câu 2 . Với XY là giá trị số thứ tự danh sách hãy thực hiện:
+
+Tìm số lẻ lớn nhất trong mảng từ a[XY]  đến a39. (2đ)
+
+ Kết quả lưu vào word nhớ M(0x030 + XY + 1). (1đ)
+
+ https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/185acc647c625513ef510f7153d28f30ac0834af/lelonnhat.txt
+
   
