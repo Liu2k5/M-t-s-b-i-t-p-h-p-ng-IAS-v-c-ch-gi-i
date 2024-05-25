@@ -1,5 +1,7 @@
 # Một số bài tập hợp ngữ IAS và cách giải
-Lưu lại đáp án những bài tập lập trình cho máy IAS thầy giao cho
+Lưu lại đáp án những bài tập lập trình cho máy IAS thầy giao . Tuy nhiên, tớ khuyến khích mọi người tự tìm hiểu cách hoạt động của mã thay vì sao và dán.
+*留徠答案仍排習立程朱𣛠IAS師交。雖然、伵勸激每𠊛自尋曉格活動𧵑碼替爲抄和𥻂。*
+
 
 - Đếm số lượng số nguyên tố trong 20 ô nhớ liên tiếp :
   
