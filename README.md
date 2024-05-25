@@ -16,3 +16,13 @@ Lưu lại đáp án những bài tập lập trình cho máy IAS thầy giao ch
 - Cho số nguyên (có thể âm, dương) a tại 0x020. Nếu a là số nguyên tố hãy lưu nó vào 0x01f :
 
   https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/0416ff4c228df5cd8059fe92dc702510aa2e91ce/ktrasnt.txt
+
+- Cho 3 số nguyên dương bất kỳ lưu liên tục từ 0x100. 
+Tính thương biểu thức D=| [(a+b)c]/(c-a) |. (1đ)
+Nếu mẫu bằng 0 thì D = -1. (0.5đ)
+Kết quả D lưu vào word nhớ có địa chỉ 0x1XY (0.5đ)
+(XY là giá trị hexa số thứ tự danh sách) main memory.
+
+  https://github.com/Liu2k5/Mot_so_bai_tap_hop_ngu_IAS_va_cach_giai/blob/cd060672bab8988b70ad2929fd19844fb1496a37/tinhtoan.txt
+
+  
